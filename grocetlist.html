@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Compra</title>
+    <link rel="stylesheet" href="grocelist.css">
+</head>
+<body>
+    <h1>Lista de Compra</h1>
+    <ul id="lista">
+    </ul>
+    <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
+    <button onclick="agregarElemento()">Añadir</button>
+    <button onclick="borrarTodos()">Borrar Todos</button>
+
+    <script>
+        const lista = document.getElementById("lista");
+        const nuevoElementoInput = document.getElementById("nuevoElemento");
+
+        function agregarElemento() {
+            const nuevoElementoTexto = nuevoElementoInput.value.trim();
+            if (nuevoElementoTexto === "") return;
+
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                <span>${nuevoElementoTexto}</span>
+                <button onclick="editarElemento(this)">Editar</button>
+                <button onclick="borrarElemento(this)">Borrar</button>
+            `;
+            lista.appendChild(listItem);
+            nuevoElementoInput.value = "";
+        }
+
+        function editarElemento(btn) {
+            const listItem = btn.parentElement;
+            const textoElement = listItem.querySelector("span");
+            const textoActual = textoElement.textContent;
+            const nuevoTexto = prompt("Editar elemento:", textoActual);
+
+            if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
+                textoElement.textContent = nuevoTexto;
+            }
+        }
+
+        function borrarElemento(btn) {
+            const listItem = btn.parentElement;
+            lista.removeChild(listItem);
+        }
+
+        function borrarTodos() {
+            while (lista.firstChild) {
+                lista.removeChild(lista.firstChild);
+            }
+        }
+    </script>
+</body>
+</html>

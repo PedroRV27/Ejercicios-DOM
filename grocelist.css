@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+#lista {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li span {
+    flex-grow: 1;
+}
+
+button.editar {
+    background: url('editar.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button.borrar {
+    background: url('cruz-roja.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#nuevoElemento {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

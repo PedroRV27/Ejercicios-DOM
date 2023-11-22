@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 100px;
+    height: 150px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#imagenContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+}
